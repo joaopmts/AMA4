@@ -25,9 +25,6 @@ public class QuickSort implements Sort{
         vet[ini] = vet[dir]; vet[dir] = pivo;
         return dir;
   }
-	/*
-	 * Quicksort - principal (chama o metodo separa)
-	 */
 	public static void quicksort(int vet[], int ini, int fim) {
       if (ini < fim)
       {

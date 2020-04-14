@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 
 
 public class IOFacade {
@@ -37,5 +38,14 @@ public class IOFacade {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public Object abrirObjeto(String arquivo) {
+		try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(arquivo))) {;
+			return in.readObject();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return null;
 	}
 }
